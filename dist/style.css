@@ -26,9 +26,6 @@ html {
   width: calc(80% - 80px);
   transition: width 400ms ease;
 }
-.container .menu-bar.hidden ~ .task-field {
-  width: 100%;
-}
 .container .logo, .container .alt-logo {
   background-color: #12b886;
   width: 62%;
@@ -130,6 +127,11 @@ html {
   padding-top: 20px;
 }
 
+@media (min-width: 740px) {
+  .menu-bar.hidden ~ .task-field {
+    width: 100%;
+  }
+}
 @media (max-width: 860px) {
   html {
     font-size: 9px;
@@ -151,7 +153,8 @@ html {
   }
   .task-field {
     padding: 60px;
-    max-width: 80%;
+    max-width: 100%;
+    margin: 0 auto;
   }
   .task-field h1 {
     margin-top: 80px;

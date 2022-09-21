@@ -22,8 +22,7 @@ html
     width: calc(80% - 80px)
     transition: width 400ms ease
 
-  .menu-bar.hidden~.task-field  
-    width: 100%
+ 
 
   .logo, .alt-logo
     background-color: $logo-bk
@@ -122,6 +121,12 @@ html
 
 
 // media queries 
+
+@media(min-width: 740px)
+   .menu-bar.hidden~.task-field  
+    width: 100%
+
+
 @media (max-width: $tablet)
   html
     font-size: 9px
@@ -138,10 +143,11 @@ html
     @include openLogo($show: 300px)
   .task-field
     padding: 60px
-    max-width: 80%
+    max-width: 100%
+    margin: 0 auto
     h1
       margin-top: 80px
-
+  
 
 @media (max-width: $mobile)
   html 
