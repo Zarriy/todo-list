@@ -1,0 +1,119 @@
+@import 'variables' 
+
+*
+  padding: 0
+  margin: 0
+  font-family: $use-font
+
+.container
+  display: flex
+  flex: 1 1 auto
+  height: 100vh
+  .menu-bar
+    width: 22%
+    background-color: $light-color
+    padding: 50px 0
+    position: relative
+    transition: transform 200ms ease
+    z-index: 999
+  .task-field
+    width: calc(80% - 80px)
+    transition: width 400ms ease
+
+  .menu-bar.hidden~.task-field  
+    width: 100%
+
+  .logo, .alt-logo
+    background-color: $logo-bk
+    width: 62%
+    border-radius: 0 50px 50px 0
+    cursor: pointer
+    position: absolute
+    
+    transition: transform 50ms ease-in
+    &:hover 
+      background-color: $dark
+    img
+      width: 60%
+      margin-left: 50px
+      
+
+      /* menu icons */
+  .menu-icons
+    margin-top: 50px
+    margin-left: 30px
+    color: $dark
+    font-size: 22px
+    ul
+      list-style-type: none
+    .menu-icon  
+      cursor: pointer
+      margin-bottom: 24px
+    .menu-icon:hover
+      color:$logo-bk
+    .menu-icon span
+      margin-right: 10px
+
+    .project-list
+      font-size: 18px  
+      margin-top: -10px
+      margin-left: 20px
+      cursor: pointer
+      li:hover  
+        color: $logo-bk
+      
+     
+    /* add button for adding tasks and projects */
+
+
+  .add-btn 
+      background-color: $dark
+      width: 60px
+      height: 60px
+      border: none
+      border-radius: 50%
+      position: absolute
+      bottom: 20px
+      right: 20px
+      &:hover 
+        background-color: $logo-bk
+        cursor: pointer
+      ion-icon 
+        color: $light-color
+        font-size: 30px
+      
+
+.task-field
+  padding: 80px
+  h1
+    margin-bottom: 50px
+  
+.task-area
+  display: flex
+  justify-content: space-between
+  font-size: 22px
+  padding-bottom: 4px
+  border-bottom: 1px solid #dee2e6
+
+  .task-title
+  label
+    margin-left: 10px
+
+
+/* adding CSS for hidding and displaying the menuBar */
+
+
+
+
+.hidden
+  transform: translateX(-100%)
+
+.isOpen
+  transform: translateX(0px)
+.logo-open  
+  transform: translateX(200px)
+  background-color: $light-color !important
+  padding: 10px
+  
+.menu-ul
+  padding-top: 20px

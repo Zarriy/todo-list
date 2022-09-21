@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex: 1 1 auto;
+  height: 100vh;
+}
+.container .menu-bar {
+  width: 22%;
+  background-color: #e6fcf5;
+  padding: 50px 0;
+  position: relative;
+  transition: transform 200ms ease;
+  z-index: 999;
+}
+.container .task-field {
+  width: calc(80% - 80px);
+  transition: width 400ms ease;
+}
+.container .menu-bar.hidden ~ .task-field {
+  width: 100%;
+}
+.container .logo, .container .alt-logo {
+  background-color: #12b886;
+  width: 62%;
+  border-radius: 0 50px 50px 0;
+  cursor: pointer;
+  position: absolute;
+  transition: transform 50ms ease-in;
+}
+.container .logo:hover, .container .alt-logo:hover {
+  background-color: #087f5b;
+}
+.container .logo img, .container .alt-logo img {
+  width: 60%;
+  margin-left: 50px;
+  /* menu icons */
+}
+.container .menu-icons {
+  margin-top: 50px;
+  margin-left: 30px;
+  color: #087f5b;
+  font-size: 22px;
+  /* add button for adding tasks and projects */
+}
+.container .menu-icons ul {
+  list-style-type: none;
+}
+.container .menu-icons .menu-icon {
+  cursor: pointer;
+  margin-bottom: 24px;
+}
+.container .menu-icons .menu-icon:hover {
+  color: #12b886;
+}
+.container .menu-icons .menu-icon span {
+  margin-right: 10px;
+}
+.container .menu-icons .project-list {
+  font-size: 18px;
+  margin-top: -10px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.container .menu-icons .project-list li:hover {
+  color: #12b886;
+}
+.container .add-btn {
+  background-color: #087f5b;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+.container .add-btn:hover {
+  background-color: #12b886;
+  cursor: pointer;
+}
+.container .add-btn ion-icon {
+  color: #e6fcf5;
+  font-size: 30px;
+}
+
+.task-field {
+  padding: 80px;
+}
+.task-field h1 {
+  margin-bottom: 50px;
+}
+
+.task-area {
+  display: flex;
+  justify-content: space-between;
+  font-size: 22px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #dee2e6;
+}
+.task-area label {
+  margin-left: 10px;
+}
+
+/* adding CSS for hidding and displaying the menuBar */
+.hidden {
+  transform: translateX(-100%);
+}
+
+.isOpen {
+  transform: translateX(0px);
+}
+
+.logo-open {
+  transform: translateX(200px);
+  background-color: #e6fcf5 !important;
+  padding: 10px;
+}
+
+.menu-ul {
+  padding-top: 20px;
+}
+
+/*# sourceMappingURL=style.css.map */
