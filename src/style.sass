@@ -1,19 +1,21 @@
 @import 'variables' 
-
+html
+  font-size: 10px
 *
   padding: 0
   margin: 0
   font-family: $use-font
+  
 
 .container
   display: flex
-  flex: 1 1 auto
+  flex: 1 0 auto
   height: 100vh
   .menu-bar
-    width: 22%
+    width: 300px
     background-color: $light-color
     padding: 50px 0
-    position: relative
+    
     transition: transform 200ms ease
     z-index: 999
   .task-field
@@ -43,7 +45,7 @@
     margin-top: 50px
     margin-left: 30px
     color: $dark
-    font-size: 22px
+    font-size: 2.2rem
     ul
       list-style-type: none
     .menu-icon  
@@ -55,7 +57,7 @@
       margin-right: 10px
 
     .project-list
-      font-size: 18px  
+      font-size: 1.8rem  
       margin-top: -10px
       margin-left: 20px
       cursor: pointer
@@ -86,18 +88,18 @@
 .task-field
   padding: 80px
   h1
-    margin-bottom: 50px
+    margin-bottom: 5rem
   
 .task-area
   display: flex
   justify-content: space-between
-  font-size: 22px
+  font-size: 2.2rem
   padding-bottom: 4px
   border-bottom: 1px solid #dee2e6
 
   .task-title
-  label
-    margin-left: 10px
+   label
+     margin-left: 10px
 
 
 /* adding CSS for hidding and displaying the menuBar */
@@ -106,14 +108,47 @@
 
 
 .hidden
-  transform: translateX(-100%)
+  @include hide
 
 .isOpen
   transform: translateX(0px)
 .logo-open  
-  transform: translateX(200px)
+  @include openLogo
   background-color: $light-color !important
   padding: 10px
   
 .menu-ul
   padding-top: 20px
+
+
+// media queries 
+@media (max-width: $tablet)
+  html
+    font-size: 9px
+
+@media (max-width: $tabletMobile)
+  .container
+    display: block
+  .menu-bar
+    position: absolute
+    height: 86vh
+  .hidden
+    @include hide($hide: 300px)
+  .logo-open
+    @include openLogo($show: 300px)
+  .task-field
+    padding: 60px
+    max-width: 80%
+    h1
+      margin-top: 80px
+
+
+@media (max-width: $mobile)
+  html 
+    font-size: 7px
+  .menu-bar 
+    max-width: 200px
+  .hidden
+    @include hide($hide: 200px)
+  .logo-open
+    @include openLogo($show: 200px)

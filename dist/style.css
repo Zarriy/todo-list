@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap");
+/* Breaking Points  */
+html {
+  font-size: 10px;
+}
+
 * {
   padding: 0;
   margin: 0;
@@ -7,14 +12,13 @@
 
 .container {
   display: flex;
-  flex: 1 1 auto;
+  flex: 1 0 auto;
   height: 100vh;
 }
 .container .menu-bar {
-  width: 22%;
-  background-color: #e6fcf5;
+  width: 300px;
+  background-color: #96f2d7;
   padding: 50px 0;
-  position: relative;
   transition: transform 200ms ease;
   z-index: 999;
 }
@@ -45,7 +49,7 @@
   margin-top: 50px;
   margin-left: 30px;
   color: #087f5b;
-  font-size: 22px;
+  font-size: 2.2rem;
   /* add button for adding tasks and projects */
 }
 .container .menu-icons ul {
@@ -62,7 +66,7 @@
   margin-right: 10px;
 }
 .container .menu-icons .project-list {
-  font-size: 18px;
+  font-size: 1.8rem;
   margin-top: -10px;
   margin-left: 20px;
   cursor: pointer;
@@ -85,7 +89,7 @@
   cursor: pointer;
 }
 .container .add-btn ion-icon {
-  color: #e6fcf5;
+  color: #96f2d7;
   font-size: 30px;
 }
 
@@ -93,23 +97,23 @@
   padding: 80px;
 }
 .task-field h1 {
-  margin-bottom: 50px;
+  margin-bottom: 5rem;
 }
 
 .task-area {
   display: flex;
   justify-content: space-between;
-  font-size: 22px;
+  font-size: 2.2rem;
   padding-bottom: 4px;
   border-bottom: 1px solid #dee2e6;
 }
-.task-area label {
+.task-area .task-title label {
   margin-left: 10px;
 }
 
 /* adding CSS for hidding and displaying the menuBar */
 .hidden {
-  transform: translateX(-100%);
+  transform: translateX(-300px);
 }
 
 .isOpen {
@@ -117,13 +121,55 @@
 }
 
 .logo-open {
-  transform: translateX(200px);
-  background-color: #e6fcf5 !important;
+  transform: translateX(300px);
+  background-color: #96f2d7 !important;
   padding: 10px;
 }
 
 .menu-ul {
   padding-top: 20px;
+}
+
+@media (max-width: 860px) {
+  html {
+    font-size: 9px;
+  }
+}
+@media (max-width: 740px) {
+  .container {
+    display: block;
+  }
+  .menu-bar {
+    position: absolute;
+    height: 86vh;
+  }
+  .hidden {
+    transform: translateX(-300px);
+  }
+  .logo-open {
+    transform: translateX(300px);
+  }
+  .task-field {
+    padding: 60px;
+    max-width: 80%;
+  }
+  .task-field h1 {
+    margin-top: 80px;
+  }
+}
+@media (max-width: 540px) {
+  html {
+    font-size: 7px;
+  }
+  .menu-bar {
+    max-width: 200px;
+  }
+  .hidden {
+    transform: translateX(-200px);
+  }
+  .logo-open {
+    transform: translateX(200px);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

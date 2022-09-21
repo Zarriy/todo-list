@@ -1,8 +1,23 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700&display=swap')
 
-$light-color: #e6fcf5
+$light-color: #96f2d7
 $lig-dk: #c3fae8
 $logo-bk: #12b886
 $dark: #087f5b
 
 $use-font: 'Open Sans', sans-serif
+
+
+
+/* Breaking Points  */
+$tablet: 860px
+$tabletMobile: 740px
+$mobile: 540px 
+
+
+@mixin hide($hide: 300px)
+    transform: translateX(- $hide)
+
+@mixin openLogo($show: 300px)
+    transform: translateX($show)
+
